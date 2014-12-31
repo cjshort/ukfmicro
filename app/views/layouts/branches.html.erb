@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Microsites</title>
+  <%= stylesheet_link_tag "admins" %>
+  <%= javascript_include_tag "admins" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="row">
+	<div class="large-1 medium-1 columns iconbar">
+		<ul class="side-nav text-center">
+		  <li><a href="<%= branches_dashboard_path %>">Dashboard</a></li>
+		  <li><a href="<%= branches_settings_path %>">Settings</a></li>
+		  <li><a href="<%= branches_editwebsite_path %>">Edit Website</a></li>
+		  <li><a href="<%= branches_dashboard_path %>">Blog</a></li>
+		  <li><a href="<%= branches_dashboard_path %>">Leaderboard</a></li>
+		  <li><a href="<%= branches_dashboard_path %>"><% if branch_signed_in? %><%= current_branch.branch %><% end %></a></li>
+		  <% if branch_signed_in? %>
+			  <li><%= link_to('Sign out', destroy_branch_session_path, :method => :delete) %></li>
+			  <% else %>
+			  <li><%= link_to('Sign in', new_branch_session_path) %></li>
+		  <% end %>
+		</ul>
+	</div>
+	<div class="large-11 medium-11 columns">
+		<% if flash[:notice] %>
+		    <p id="notice" ><%= flash[:notice] %></p> 
+		<% elsif flash[:alert] %>
+		    <p id="alert" ><%= flash[:alert] %></p> 
+		<% end %>
+		<%= yield %>
+	</div>
+</div>
+
+</body>
+</html>

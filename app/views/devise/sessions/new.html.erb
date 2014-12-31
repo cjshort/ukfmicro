@@ -1,0 +1,36 @@
+<h2>Sign in</h2>
+
+<% if current_page?(new_branch_session_path) %>
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+	  <div><%= f.label :branch %><br />
+	  <%= collection_select(:branch, :branch, @branches, :branch, :branch, {:prompt => "Select your branch"}) %></div>
+
+	  <div><%= f.label :password %><br />
+	    <%= f.password_field :password, autocomplete: "off" %></div>
+
+	  <% if devise_mapping.rememberable? -%>
+	    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+	  <% end -%>
+
+	  <div><%= f.submit "Sign in" %></div>
+	<% end %>
+<% else %>
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+	  <div><%= f.label :branch %><br />
+	  <%= f.text_field :branch, :readonly => true, :value => "admin" %></div>
+
+	  <div><%= f.label :password %><br />
+	    <%= f.password_field :password, autocomplete: "off" %></div>
+
+	  <% if devise_mapping.rememberable? -%>
+	    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+	  <% end -%>
+
+	  <div><%= f.submit "Sign in" %></div>
+	<% end %>
+<% end %>
+
+
+<%= render "devise/shared/links" %>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Microsites</title>
+  <%= stylesheet_link_tag "admins" %>
+  <%= javascript_include_tag "admins" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="row">
+	<div class="large-1 medium-1 columns iconbar">
+		<ul class="side-nav text-center">
+		  <li><a href="<%= admins_dashboard_path %>">Link 1</a></li>
+		  <li><a href="#">Link 2</a></li>
+		  <li><a href="#"><% if admin_signed_in? %><%= current_admin.branch %><% end %></a></li>
+		  <% if admin_signed_in? %>
+			  <li><%= link_to('Sign out', destroy_admin_session_path, :method => :delete) %></li>
+			  <% else %>
+			  <li><%= link_to('Sign in', new_admin_session_path) %></li>
+		  <% end %>
+		</ul>
+	</div>
+	<div class="large-11 medium-11 columns">
+		<% if flash[:notice] %>
+		    <p id="notice" ><%= flash[:notice] %></p> 
+		<% elsif flash[:alert] %>
+		    <p id="alert" ><%= flash[:alert] %></p> 
+		<% end %>
+		<%= yield %>
+	</div>
+</div>
+
+</body>
+</html>

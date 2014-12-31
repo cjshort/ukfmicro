@@ -1,0 +1,58 @@
+	<div id="page">
+		<div id="header">
+			<div class="background">
+				<h1><a href="index.html">DelliStore</a></h1>
+				<h1 class="location"><%= @website.subdomain %></h1>
+				<ul>
+					<li class="active"><a href="<%= website_path(@website) %>">Home</a></li>
+					<li><a href="<%= website_aboutus_path(@website) %>">About Us</a></li>
+					<li><a href="<%= website_blog_path(@website) %>">Blog</a></li>
+					<li><a href="<%= website_contact_path(@website) %>">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content">
+			<div id="leftcol">
+				<div class="block">
+					<div class="block-top"></div>
+					<div class="block-content">
+						<h2>Welcome to the <span>DelliStore!</span></h2>
+							<p>
+								<%= image_tag('img-cake.jpg', class: "cake") %>
+								liquam suscipit. <strong>Integer justo</strong> erat, bibendum sed, lacinia eu, tristique condimentum, magna. Aliquam augue dolor, 
+                                tempus sit amet, pharetra nec, blandit elementum, diam. Proin pharetra odio eu lectus sollicitudin ultricies. Suspend<br />
+								isse turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.</p>
+						<a class="yellow-button" href="#"><span>Learn More</span></a>
+					</div>
+					<div class="block-bottom"></div>
+				</div>
+			</div>
+			<div id="rightcol">
+				<div class="block">
+					<div class="block-top"></div>
+					<div class="block-content">
+						<h3>Our <span>Specials!</span></h3>
+						<ul>
+							<li><a href="#">Burger</a><strong>$4.99</strong></li>
+							<li><a href="#">Chicken Wings</a><strong>$5.99</strong></li>
+							<li><a href="#">French Fries</a><strong>$4.99</strong></li>
+							<li><a href="#">Large Pizza</a><strong>$12.99</strong></li>
+						</ul>
+						<a class="yellow-button"><span>See Menu</span></a>
+					</div>
+					<div class="block-bottom"></div>
+				</div>
+
+	
+			</div>
+		</div>
+		<div id="footer">
+			<p>©2009 The DelliStore. Design by <a href="http://www.dellustrations.com/templates.html">Dellustrations.com</a> for <a href="http://www.smashingmagazine.com">Smashing Magazine</a></p>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="services.html">Blog</a></li>
+				<li><a href="contact.html">Contact us</a></li>
+			</ul>
+		</div>
+	</div>

@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="large-8 columns content">
+    <h2>Launch new website</h2>
+
+    <% resource.build_website %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <%= f.fields_for :website do |website| %>
+        <div class="row">
+          <%= website.label :subdomain %>
+          <div class="small-9 columns">
+            <%=  website.text_field :subdomain %>
+          </div>
+          <div class="small-3 columns">
+            <span class="postfix">.parentdomain.com</span>
+          </div>
+        </div>
+      <% end %>
+
+      <div><%= f.label :branch %>
+      <%= f.text_field :branch, autofocus: true %></div>
+
+      <div><%= f.label :email %>
+      <%= f.email_field :email %></div>
+
+      <div><%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off" %></div>
+
+      <div><%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+      <div><%= f.submit "Sign up" %></div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+  <div class="large-4 columns">
+  </div>
+</div>
