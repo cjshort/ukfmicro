@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
+  match '', to: 'websites#index', constraints: {subdomain: /.+/}, :via => [:get]
+  
 #website specific
-    get '/websites/:id', to: 'websites#index', as: "website"
-    get '/websites/:id/aboutus', to: 'websites#aboutus', as: "website_aboutus"
-    get '/websites/:id/blog', to: 'websites#blog', as: "website_blog"
-    get '/websites/:id/blogshow', to: 'websites#blogshow', as: "website_blogshow"
-    get '/websites/:id/contact', to: 'websites#contact', as: "website_contact"
+    get '/home', to: 'websites#index', as: "website"
+    get '/aboutus', to: 'websites#aboutus', as: "website_aboutus"
+    get '/blog', to: 'websites#blog', as: "website_blog"
+    get '/blogshow', to: 'websites#blogshow', as: "website_blogshow"
+    get '/contact', to: 'websites#contact', as: "website_contact"
   #website specific
 
   devise_for :branches, :controllers => { registrations: 'registrations', sessions: 'sessions' } #override devise
