@@ -7,12 +7,15 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 
-
-# Use postgres as the database for Active Record
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
-gem 'pg'
+
+group :development do
+	gem 'sqlite3'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

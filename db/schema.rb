@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141228225439) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "admins", force: true do |t|
     t.string   "branch",                 default: "", null: false
     t.string   "email",                  default: "", null: false
@@ -32,8 +29,8 @@ ActiveRecord::Schema.define(version: 20141228225439) do
     t.datetime "updated_at"
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "branches", force: true do |t|
     t.string   "branch",                 default: "", null: false
@@ -51,8 +48,8 @@ ActiveRecord::Schema.define(version: 20141228225439) do
     t.datetime "updated_at"
   end
 
-  add_index "branches", ["email"], name: "index_branches_on_email", unique: true, using: :btree
-  add_index "branches", ["reset_password_token"], name: "index_branches_on_reset_password_token", unique: true, using: :btree
+  add_index "branches", ["email"], name: "index_branches_on_email", unique: true
+  add_index "branches", ["reset_password_token"], name: "index_branches_on_reset_password_token", unique: true
 
   create_table "websites", force: true do |t|
     t.string   "subdomain"
