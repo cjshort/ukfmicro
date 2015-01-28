@@ -13,16 +13,102 @@
  *= require_self
  */
 
-.iconbar{
-	height: 100vh;
-	background: #2a2a2a;
+ .navcurrentarrow{
+  background-image: image-url('arrow.png');
+  background-repeat: no-repeat;
+  background-position: center 5.4rem;
+  background-size: 45px 17px;
+  transition-duration: 300ms;
+ }
+
+  .navcurrentarrow:hover{
+  background-image: image-url('arrow.png');
+  background-repeat: no-repeat;
+  background-position: center 5.6rem;
+  background-size: 45px 17px;
+  transition-duration: 300ms;
+ }
+
+ .gradientradiusbox{
+  background: rgb(34,165,183); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(34,165,183,1) 0%, rgba(70,202,189,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(34,165,183,1)), color-stop(100%,rgba(70,202,189,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(34,165,183,1) 0%,rgba(70,202,189,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(34,165,183,1) 0%,rgba(70,202,189,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(34,165,183,1) 0%,rgba(70,202,189,1) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(34,165,183,1) 0%,rgba(70,202,189,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#22a5b7', endColorstr='#46cabd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+border-radius: 3px;
+ }
+
+.weight100{
+  font-weight: 100;
 }
+
+.weight600{
+  font-weight: 600;
+}
+
+.padding2v{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.padding3v{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.padding3h{
+  padding: 0 3rem;
+}
+
+.white{
+  color: #fff;
+}
+
+
+.headerrowgrey{
+  background: #494844;
+  z-index: -6 !important;
+}
+
+.welcomebox{
+  background: #F0F0ED;
+}
+
+.maincontent{
+  background: #FFFFFF;
+  border: 1px solid #ececec;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: relative;
+  top: -2.5rem;
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(73, 72, 68, 0.27);
+  -moz-box-shadow:    0px 1px 10px 0px rgba(73, 72, 68, 0.27);
+  box-shadow:         0px 1px 10px 0px rgba(73, 72, 68, 0.27);
+} 
+
+.pageheader{
+  background: #edece8;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #666560;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+div.icon-bar label{
+  font-weight: 900;
+}
+
 
 .content{
-	padding-left: 0.9375em;
-	padding-right: 0.9375em;
+  padding-left: 1.5375em;
+  padding-right: 1.5375em;
 }
-
 
 
 meta.foundation-version {
@@ -82,11 +168,11 @@ body {
   font-size: 100%; }
 
 body {
-  background: #fff;
-  color: #222222;
+  background: #d2cfca;
+  color: #666560;
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Ubuntu";
   font-weight: normal;
   font-style: normal;
   line-height: 1.5;
@@ -151,7 +237,8 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 100rem; }
+  max-width: 100rem;
+ }
   .row:before, .row:after {
     content: " ";
     display: table; }
@@ -1156,7 +1243,7 @@ button, .button {
   border-style: solid;
   border-width: 0;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Ubuntu";
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -1365,7 +1452,7 @@ form .row textarea.columns {
 
 /* Label Styles */
 label {
-  font-size: 0.875rem;
+  font-size: 0.885rem;
   color: #4d4d4d;
   cursor: pointer;
   display: block;
@@ -1577,7 +1664,7 @@ select {
   border-color: #cccccc;
   padding: 0.5rem;
   font-size: 0.875rem;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Ubuntu";
   color: rgba(0, 0, 0, 0.75);
   line-height: normal;
   border-radius: 0;
@@ -1837,7 +1924,7 @@ meta.foundation-mq-topbar {
       color: #FFFFFF;
       padding: 12px 0 12px 0;
       padding-left: 0.9375rem;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "Ubuntu";
       font-size: 0.8125rem;
       font-weight: normal;
       text-transform: none; }
@@ -2307,15 +2394,15 @@ meta.foundation-mq-topbar {
       outline: none;
       display: block;
       background-color: #EFEFEF;
-      color: #222222;
+      color: #666560;
       padding: 1rem 2rem;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "Ubuntu";
       font-size: 1rem; }
       .tabs dd > a:hover, .tabs .tab-title > a:hover {
         background-color: #e1e1e1; }
     .tabs dd.active a, .tabs .tab-title.active a {
       background-color: #FFFFFF;
-      color: #222222; }
+      color: #666560; }
   .tabs.radius dd:first-child a, .tabs.radius .tab:first-child a {
     -webkit-border-bottom-left-radius: 3px;
     -webkit-border-top-left-radius: 3px;
@@ -2378,7 +2465,7 @@ ul.pagination {
   margin-left: -0.3125rem; }
   ul.pagination li {
     height: 1.5rem;
-    color: #222222;
+    color: #666560;
     font-size: 0.875rem;
     margin-left: 0.3125rem; }
     ul.pagination li a, ul.pagination li button {
@@ -2424,7 +2511,7 @@ ul.pagination {
   padding: 0.875rem 0;
   list-style-type: none;
   list-style-position: outside;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+  font-family: "Ubuntu"; }
   .side-nav li {
     margin: 0 0 0.4375rem 0;
     font-size: 0.875rem;
@@ -2440,7 +2527,7 @@ ul.pagination {
     .side-nav li.active > a:first-child:not(.button) {
       color: #67c3df;
       font-weight: normal;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+      font-family: "Ubuntu"; }
     .side-nav li.divider {
       border-top: 1px solid;
       height: 0;
@@ -2636,10 +2723,10 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Ubuntu";
   font-weight: normal;
   font-style: normal;
-  color: #222222;
+  color: #666560;
   text-rendering: optimizeLegibility;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
@@ -2765,7 +2852,7 @@ abbr,
 acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #222222;
+  color: #666560;
   cursor: help; }
 
 abbr {
@@ -3241,3 +3328,83 @@ th.hide-for-touch {
 
   th.show-for-print {
     display: table-cell !important; } }
+
+.icon-bar {
+  width: 100%;
+  font-size: 0;
+  display: inline-block;
+  background: #494844;
+  padding-top: 0.7rem;
+  padding-bottom: 2rem; }
+  .icon-bar > * {
+    text-align: center;
+    font-size: 1rem;
+    width: 25%;
+    margin: 0 auto;
+    display: block;
+    padding: 1.25rem;
+    float: left; }
+    .icon-bar > * i, .icon-bar > * img {
+      display: block;
+      margin: 0 auto; }
+      .icon-bar > * i + label, .icon-bar > * img + label {
+        margin-top: .0625rem; }
+    .icon-bar > * i {
+      font-size: 1.875rem;
+      vertical-align: middle; }
+    .icon-bar > * img {
+      width: 3.375rem;
+      height: auto;}
+  .icon-bar.label-right > * i, .icon-bar.label-right > * img {
+    margin: 0 0.0625rem 0 0;
+    display: inline-block; }
+    .icon-bar.label-right > * i + label, .icon-bar.label-right > * img + label {
+      margin-top: 0; }
+  .icon-bar.label-right > * label {
+    display: inline-block; }
+  .icon-bar.vertical.label-right > * {
+    text-align: left; }
+  .icon-bar.vertical {
+    height: 100%;
+    width: auto; }
+    .icon-bar.vertical .item {
+      width: auto;
+      margin: auto;
+      float: none; }
+  .icon-bar > * {
+    font-size: 1rem;
+    padding: 1.25rem; }
+    .icon-bar > * i + label, .icon-bar > * img + label {
+      margin-top: .0625rem; }
+    .icon-bar > * i {
+      font-size: 1.875rem; }
+    .icon-bar > * img {
+      width: 3.375rem;
+      height: auto;}
+  .icon-bar > *:hover {
+    background-color: #43423e; }
+  .icon-bar > * label {
+    color: white; }
+  .icon-bar > * i {
+    color: white; }
+
+.icon-bar.two-up .item {
+  width: 50%; }
+.icon-bar.two-up.vertical .item {
+  width: auto; }
+.icon-bar.three-up .item {
+  width: 33.3333%; }
+.icon-bar.three-up.vertical .item {
+  width: auto; }
+.icon-bar.four-up .item {
+  width: 25%; }
+.icon-bar.four-up.vertical .item {
+  width: auto; }
+.icon-bar.five-up .item {
+  width: 20%; }
+.icon-bar.five-up.vertical .item {
+  width: auto; }
+.icon-bar.six-up .item {
+  width: 16.66667%; }
+.icon-bar.six-up.vertical .item {
+  width: auto; }

@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Microsites</title>
+  <title>Control Panel</title>
   <%= stylesheet_link_tag "admins" %>
   <%= javascript_include_tag "admins" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-<div class="row">
-	<div class="large-1 medium-1 columns iconbar">
-		<ul class="side-nav text-center">
-		  <li><a href="<%= admins_dashboard_path %>">Link 1</a></li>
-		  <li><a href="#">Link 2</a></li>
-		  <li><a href="#"><% if admin_signed_in? %><%= current_admin.branch %><% end %></a></li>
-		  <% if admin_signed_in? %>
-			  <li><%= link_to('Sign out', destroy_admin_session_path, :method => :delete) %></li>
-			  <% else %>
-			  <li><%= link_to('Sign in', new_admin_session_path) %></li>
-		  <% end %>
-		</ul>
-	</div>
-	<div class="large-11 medium-11 columns">
-		<% if flash[:notice] %>
-		    <p id="notice" ><%= flash[:notice] %></p> 
-		<% elsif flash[:alert] %>
-		    <p id="alert" ><%= flash[:alert] %></p> 
-		<% end %>
-		<%= yield %>
+<div class="row headerrowgrey padding3h">
+	<div class="icon-bar six-up">
+	  <a class="item navcurrentarrow">
+	    <%= image_tag('dashboardicon.png') %>
+	    <label>DASHBOARD</label>
+	  </a>
+	  <a class="item">
+	    <%= image_tag('analyticsicon.png') %>
+	    <label>ANALYTICS</label>
+	  </a>
+	  <a class="item">
+	    <%= image_tag('buildericon.png') %>
+	    <label>BUILDER</label>
+	  </a>
+	  <a class="item">
+	    <%= image_tag('mailingicon.png') %>
+	    <label>MAILING LIST</label>
+	  </a>
+	  <a class="item">
+	    <%= image_tag('leadboardicon.png') %>
+	    <label>LEADERBOARD</label>
+	  </a>
+	  <a class="item">
+	    <%= image_tag('settingsicon.png') %>
+	    <label>SETTINGS</label>
+	  </a>
 	</div>
 </div>
+
+<div class="row padding3h">
+	<div class="large-12 columns maincontent">
+	<%= yield %>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+</div>
+
+
+<script>
+  $(document).foundation();
+</script>
 
 </body>
 </html>
